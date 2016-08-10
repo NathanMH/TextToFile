@@ -19,12 +19,13 @@ import json
 
 def text_to_file(text, filename):
 
-    with open(filename, 'w') as text_file:
+    with open(filename, 'a') as text_file:
         object_type = type(text)
         if object_type is list:
             for i in text:
-                text_file.write(i)
+                text_file.write(i + '\n')
         if object_type is dict:
+            print("It's a dict!")
             json.dump(text, text_file)
 
 
@@ -42,4 +43,3 @@ def file_to_text(filename):
 ###################################################################
 # 3. TESTING
 ###################################################################
-
