@@ -27,6 +27,8 @@ def text_to_file(text, filename):
         if object_type is dict:
             print("It's a dict!")
             json.dump(text, text_file)
+        else:
+            text_file.write(text + '\n')
 
 
 def file_to_text(filename):
