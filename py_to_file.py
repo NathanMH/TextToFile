@@ -24,8 +24,7 @@ def text_to_file(text, filename):
         if object_type is list:
             for i in text:
                 text_file.write(i + '\n')
-        if object_type is dict:
-            print("It's a dict!")
+        elif object_type is dict:
             json.dump(text, text_file)
         else:
             text_file.write(text + '\n')
@@ -33,9 +32,10 @@ def text_to_file(text, filename):
 
 def file_to_text(filename):
 
-    with open(filename, 'a') as from_file:
-        data = json.load(from_file)
-        return data
+    tweets_list = []
+    with open(filename, 'r') as text_file:
+        tweets_list.append(text_file.readline())
+    return tweets_list
 
 
 ###################################################################
