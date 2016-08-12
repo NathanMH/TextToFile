@@ -34,7 +34,8 @@ def file_to_text(filename):
 
     tweets_list = []
     with open(filename, 'r') as text_file:
-        tweets_list.append(text_file.readline())
+        for line in text_file:
+            tweets_list.append(line)
     return tweets_list
 
 
